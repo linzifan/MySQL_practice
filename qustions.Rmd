@@ -1,0 +1,133 @@
+---
+title: "Database/SQL Interview Questions"
+author: "Zifan Lin"
+date: "April 17, 2015"
+output: html_document
+---
+
+
+*Credit: http://a4academics.com/interview-questions/53-database-and-sql/411-sql-interview-questions-and-answers-database*
+
+-------------------------
+##### 1. What is DBMS?
+The database management system is a collection of programs that enables user to store, retrieve, update and delete information from a database.
+
+##### 2. What is RDBMS?
+Relational database management system is a database management system that is based on the relational model. Data from relational database can be assessed or reassembled in many different ways without having to reorganize the database tables.
+
+##### 3. What is SQL?
+Structured Query Language (SQL) is a language designed specifically for commnunicating with databases.
+
+##### 4. What are the different type of SQL's statements?
+SQL statements are broadly classified into three.
+
+- **DDL** - Data Definition Language
+DDL is used to define the structure that holds the data. `CREATE`, `ALTER`, `DROP`, `TRUNCATE`
+- **DML** - Data Manipulation Language
+DML is used for manipulation of the data itself. `INSERT`, `DELETE`, `UPDATE`.
+`SELECT` statement is considered as a limited version of DML, since it cannot change data in the database.
+- **DCL** - Data Control Language
+DCL is used to control the visibility of data like granting database access and set privileges to create tables. `GRANT`, `REVOKE`
+
+##### 5. WHat are the advantages of SQL?
+- **SQL is not a proprietary language used by specific database vendors.** Almost every major DBMS supports SQL.
+- **SQL is easy to learn.**
+- SQL is actually a very powerful language and by using its language elements you can perform very **complex and sophisticated database operations.**
+
+##### 6. What is a field in a database?
+A field is an area within a record reserved for a specific piece of data.
+
+##### 7. What is a record in a database?
+A record is the collection of values/ field of a specific entity.
+
+##### 8. What is a table in a database?
+A table is a collection of records of a specific type.
+
+##### 9. What is a database transaction?
+Database transaction takes database from one consistent state to another. At the end of the transaction the system must be in the prior state if the transaction fails or the status of the system should reflect the successful completion if the transaction goes through.
+
+##### 10. What are properties of a transaction?
+- **Atomicity** 
+A transaction consists of many steps. When all the steps in a transaction gets completed, it will get reflected in database or if any step fails, all the transactions are rolled back.
+- **Consistency**
+The database will move from one consistent state to another, if the transaction succeeds and remain in the original state, if the transaction fails.
+- **Isolation**
+Every transaction should operate as if it is the only transaction in the system.
+- **Durability**
+Once a tranaction has completed successfully, the updated rows/ records must be available for all other transactions on a permanent basis.
+
+##### 11. What is a database lock?
+Database lock tells a transaction, if the data item in questions is currently being used by other transactions.
+
+##### 12. What are the types of locks?
+- **Shared Lock** When a shared lock is applied on data item, other transactions can only read the item, but cannot write into it.
+- **Exculsive Lock** When an exculsive lock is applied on data item, other transactions cannot read or write into the data item.
+
+##### 13. What is a primary key?
+A primary key is a column whose values **uniquely identify every row** in a table. Primary key values can never be reused. If a row is deleted from the table, its primary key may not be assigned to any new rows in the future.
+To define a field as primary key, following conditions had to be met:
+
+- No two rows can have the same primary key value
+- Every row must have a primary key value
+- The primary key field cannot be NULL
+- Values in primary key columns can never be modified or updated
+
+##### 14. What is a composite primary key?
+A composite primary key is a type of candidate key, which represents a set of columns whose values uniquely identify every row in a table. What it means is that, a table which contains composite primary key will be indexed based on the columns specified in the primary key. This key will be referred in Foreign Key tables.
+
+##### 15. Define SQL `INSERT` statement.
+`INSERT` statement is used to add rows to a table. To insert a single complete row. To insert a single partial row.
+
+##### 16. Define SQL `UPDATE` statement.
+`UPDATE` statement is used to update data in a row or set of rows specified in the filter condition.
+
+##### 17. Define SQL `DELETE` statement.
+`DELETE` statement is used to delete a row or set of rows specified in the filter condition.
+
+##### 18. What are wild cards used in database for pattern matching?
+`LIKE` operator is used for pattern matching.
+
+- Do not overuse wild cards. If another search operator will do, use it instead.
+- When you do use wild cards, try not to use them at the beginning of the serach pattern, unless absolutely necessary. Search patterns that begin with wild cards are the slowest to process.
+- Pay careful attention to the placement of the wild card symbols.
+
+##### 19. Define `JOIN` and explain different types.
+
+- `LEFT JOIN` 
+- `RIGHT JOIN`
+- `OUTER JOIN` 
+- `FULL JOIN`
+- `INNER JOIN`
+- `CROSS JOIN`
+
+##### 20. What is Self-Join?
+Self-Join is query used to join a table to itself. Aliases should be used for the same table comparison.
+
+##### 21. What is a view?
+The views are virtual tables. Unlike tables that contain data, views simply contain queries that dynamically retrieve data when used.
+
+##### 22. What is a materialized view?
+Materialized views are also a view but are disk based. Materialized views get updates on specific duration, base upon the interval specified in the query definition. We can index materialized view.
+
+##### 23. What are the advantages and disadvantages of views in a database?
+**Advantages:**
+
+1. Views don't store data in a physical location.
+2. The view can be used to hide some of the columns from the table.
+3. Views can provide Access Restriction, since data insertion, update and deletion is not possible with the view.
+
+**Disadvantages:**
+
+1. When a table is dropped, associated view become irrelevant.
+2. Since the view is created when a query requesting data from view is triggered, its a bit slow.
+3. When views are created for large tables, it occupies more memory.
+
+##### 24. What is a trigger?
+Database trigger are sets of commands that get executed when an event (Before `INSERT`, After `INSERT`, On `UPDATE`, On `DELETE` of a row) occurs on a table, views.
+
+##### 25. Explain the difference between `DELETE`, `TRUNCATE` and `DROP` commands.
+Once `DELETE` operation is performed, Commit and Rollback can be performed to retrieve data.
+
+Once the `TRUNCATE` statement is executed, Commit and Rollback statement cannot be performed. Where condition can be used along with delete statement but it can't be used with truncate statement.
+
+`DROP` command is used to drop the table or keys like primary,foreign from a table.
