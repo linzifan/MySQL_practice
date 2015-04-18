@@ -209,6 +209,17 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <p>Once the <code>TRUNCATE</code> statement is executed, Commit and Rollback statement cannot be performed. Where condition can be used along with delete statement but it can’t be used with truncate statement.</p>
 <p><code>DROP</code> command is used to drop the table or keys like primary,foreign from a table.</p>
 </div>
+<div id="how-to-improve-sql-efficiency" class="section level5">
+<h5>How to improve SQL efficiency?</h5>
+<ol style="list-style-type: decimal">
+<li><code>FROM</code> choose the table with smallest number of observations as the base table (put on the last of the list)</li>
+<li><code>WHERE</code> from bottom to top. The condition that could filter a lot of observations should be put on the last.</li>
+<li><code>SELECT</code> avoid using “*“, rather put all column names need.</li>
+<li><code>count(*)</code> is faster thant <code>count(1)</code></li>
+<li>Use alias.</li>
+<li>Use <code>WHERE</code> instead of <code>HAVING</code>.</li>
+</ol>
+</div>
 
 
 </div>

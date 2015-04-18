@@ -131,3 +131,13 @@ Once `DELETE` operation is performed, Commit and Rollback can be performed to re
 Once the `TRUNCATE` statement is executed, Commit and Rollback statement cannot be performed. Where condition can be used along with delete statement but it can't be used with truncate statement.
 
 `DROP` command is used to drop the table or keys like primary,foreign from a table.
+
+
+##### How to improve SQL efficiency?
+
+1. `FROM` choose the table with smallest number of observations as the base table (put on the last of the list)
+2. `WHERE` from bottom to top. The condition that could filter a lot  of observations should be put on the last.
+3. `SELECT` avoid using "*", rather put all column names need.
+4. `count(*)` is faster thant `count(1)`
+5. Use alias.
+6. Use `WHERE` instead of `HAVING`.
