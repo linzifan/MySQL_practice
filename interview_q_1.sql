@@ -56,9 +56,13 @@ WHERE course = "Math"
 LIMIT 2,1)  # third highest limit k-1, 1
 AND s.course = "Math";
 
+CREATE VIEW highest AS
+SELECT * FROM student_score AS s
+WHERE s.score = (SELECT DISTINCT score FROM student_score
+WHERE course = "Math"
+LIMIT 1,1)
+AND s.course = "Math";
 
-
-
-
+SELECT * FROM highest;
 
 
