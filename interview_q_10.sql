@@ -48,3 +48,40 @@ INSERT INTO EMP  values (10, 9, 4, 'Bhuti', 60, '2012-08-24');
 
 SELECT * FROM DEPARTMENT;
 SELECT * FROM EMP;
+
+
+# What is the difference between inner join and outer join?
+# Inner join returns rows when there is at least one match in both tables.
+SELECT dept.name DEPARTMENT, emp.name EMPLOYEE
+FROM DEPARTMENT dept, EMP emp
+WHERE emp.dept_id = dept.id;
+
+SELECT DEPARTMENT.name DEPARTMENT, EMP.name EMPLOYEE
+FROM DEPARTMENT LEFT JOIN EMP
+ON EMP.DEPT_ID = DEPARTMENT.ID
+UNION
+SELECT DEPARTMENT.name DEPARTMENT, EMP.name EMPLOYEE
+FROM DEPARTMENT RIGHT JOIN EMP
+ON EMP.DEPT_ID = DEPARTMENT.ID;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
